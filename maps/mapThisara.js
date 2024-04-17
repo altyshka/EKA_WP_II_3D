@@ -5,7 +5,7 @@ var mapThisara = [
     [-1000, 0, 0, 0, 90, 0, 2000, 600, "url('textures/Th 1.jpg')", "ff0000"],
     [0, 100, 0, 90, 0, 0, 2000, 2000, "url('textures/Th 2.jpg')", "00ff00"], //floor
 
-    [200, 100, 300, 90, 0, 0, 350, 300, "url('textures/Teleport 1.gif')", "00ff00"], //hole
+    [200, 100, 300, 90, 0, 0, 264, 360, "url('textures/Teleport.gif')", "00ff00"], //hole
     //Patric's wall
     [500, 0, 150, 0, 0, 0, 600, 200, "url('textures/Th 1.jpg')", "ff0000"],
     [200, 0, 600, 0, 0, 0, 500, 300, "url('textures/Th 1.jpg')", "ff0000"],

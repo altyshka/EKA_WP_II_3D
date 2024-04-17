@@ -156,17 +156,19 @@ function update() {
       let y0 = (pawn.y - currentMap[5][1]);
       let z0 = (pawn.z - currentMap[5][2]);
 
-      if((x0**2 + y0**2 + z0**2 + dx**2 + dy**2 + dz**2 ) < (currentMap[5][6]**2 + currentMap[5][7]**2)){
+      if((x0**2 + y0**2 + z0**2 + dx**2 + dy**2 + dz**2 ) < ((currentMap[5][6]/2)**2 + (currentMap[5][7]/2)**2)){
         console.log("Teleport Found!"); 
         collectedItemCount = 0;
         world.innerHTML = "";
         document.getElementById("instructionBoard").innerText = "";
         //clearInterval(TimerGame);
         level++;
+        if (level == maps.length ){ level = 0 }
         currentMap = maps[level];
         //console.log(currentMap);
         CreateNewWorld(currentMap);
         createItems();
+        pawn.x = pawn.y = pawn.z = pawn.rx = pawn.ry = 0;
       }
   }
   
