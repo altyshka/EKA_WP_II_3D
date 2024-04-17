@@ -136,6 +136,9 @@ function update() {
     let dz = pawn.z - item[2];
 
     let distance = Math.sqrt(dx * dx + dy * dy + dz * dz);
+    if (distance <= 8 * item[6]) {
+      collectItem(index);
+    }
     document.getElementById("scoreBoard").innerText =
       "Collected Items: " + collectedItemCount + "/" + items.length;
     if(collectedItemCount == items.length){
@@ -145,10 +148,14 @@ function update() {
       .play()
       .catch((error) => console.error("Sound playback failed", error));
     }
-    if (distance <= 8 * item[6]) {
-      collectItem(index);
-    }
+    
   });
+  } else {
+      let x0 = (pawn.x - currentMap[5][0]);
+      let y0 = (pawn.y - currentMap[5][1]);
+      let z0 = (pawn.z - currentMap[5][2]);
+
+      if((x0**2 + y0**2 + z0**2 + dx**2 + dy**2 + dz**2 ) < (currentMap[5][6]**2 + currentMap[5][7]**2)){console.log("Teleport Found!"); currentMap = maps[1]; }
   }
   
 
