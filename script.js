@@ -124,6 +124,8 @@ function update() {
 
   if (lock) {
     pawn.rx = pawn.rx + drx;
+    if (pawn.rx < -35){pawn.rx = -35}
+    if (pawn.rx > 60){pawn.rx = 60}
     pawn.ry = pawn.ry + dry;
   }
 
